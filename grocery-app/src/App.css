@@ -50,7 +50,7 @@ html{
   justify-content: center;
 
 }
-.boarder {
+.item {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
@@ -58,9 +58,9 @@ html{
   border-radius: 20px;
   border: none;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
-  flex-direction: column;
+ 
   
 }
 .input-field{

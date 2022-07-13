@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const [inputField, setInputField] = useState("333");
-  const [groceryList, setgroceryList] = useState([
+  const [groceryList, setGroceryList] = useState([
     "Egg",
     "Milk",
     "chips",
@@ -19,7 +19,13 @@ function App() {
     const items = [...groceryList];
     const newItem = inputField;
     items.push(newItem);
-    setgroceryList(items);
+    setGroceryList(items);
+  }
+
+  function handleDelete(item) {
+    const items = [...groceryList];
+    const result = items.filter((i) => i !== item);
+    setGroceryList(result);
   }
 
   return (
@@ -27,6 +33,7 @@ function App() {
       items={groceryList}
       onClick={handleClick}
       onChange={handleChange}
+      onDelete={handleDelete}
     />
   );
 }

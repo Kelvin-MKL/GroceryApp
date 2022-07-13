@@ -1,6 +1,6 @@
 import React from "react";
-
-const ToBuyForm = ({ onChange, onClick, items }) => {
+import { RiDeleteBin2Line } from "react-icons/ri";
+const ToBuyForm = ({ onChange, onClick, items, onDelete }) => {
   return (
     <div className='App'>
       <div className='App-header'>
@@ -19,8 +19,8 @@ const ToBuyForm = ({ onChange, onClick, items }) => {
       </div>
 
       {items.map((item) => (
-        <div key={item} className='boarder'>
-          {item}
+        <div key={item} className='item'>
+          {item} <RiDeleteBin2Line onClick={() => onDelete(item)} />
         </div>
       ))}
     </div>
