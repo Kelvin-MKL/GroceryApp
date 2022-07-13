@@ -50,7 +50,7 @@ html{
   justify-content: center;
 
 }
-.item {
+.item-list {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
@@ -60,8 +60,30 @@ html{
   align-items: center;
   justify-content: space-between;
   display: flex;
- 
+  font-weight: bold;
   
+}
+
+.item-edit{
+   margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-image: linear-gradient(to bottom, rgb(121, 39, 87), rgb(63, 54, 28));
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  color: rgb(224, 199, 199);
+  font-weight: bold;
+
+
+}
+
+.item-row{
+  justify-content: right;
+
+
 }
 .input-field{
   margin-top: 5px;
