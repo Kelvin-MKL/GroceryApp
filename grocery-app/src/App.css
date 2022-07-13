@@ -1,0 +1,80 @@
+/* .App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+html{
+  height: 100%;
+  background-image: linear-gradient(darkblue, rgb(109, 76, 122));
+  display: flex;
+  justify-content: center;
+  
+
+}
+.App-header{
+  color: rgb(172, 137, 72);
+  display: flex;
+  justify-content: center;
+}
+.App-body-search{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+.App-body-list{
+  border: dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.boarder {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-image: linear-gradient(to bottom, rgb(201, 128, 170), rgb(176, 176, 221));
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  
+}
+.input-field{
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  
+}
+.btn-add{
+  border-radius: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  color: azure;
+}
