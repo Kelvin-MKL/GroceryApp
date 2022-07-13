@@ -11,6 +11,7 @@ const ToBuyForm = ({
   value,
   isEditing,
   onUpdate,
+  input,
 }) => {
   return (
     <div className='App'>
@@ -20,6 +21,7 @@ const ToBuyForm = ({
 
       <div className='App-body-search'>
         <input
+          ref={input}
           className='input-field'
           value={value}
           placeholder='What to buy?'

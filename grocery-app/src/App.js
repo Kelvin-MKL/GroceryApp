@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ToBuyForm from "./component/toBuyForm";
 import "./App.css";
 
 function App() {
   const [currentEditing, setCurrentEditing] = useState(NaN);
   const [inputField, setInputField] = useState("");
+  const input = useRef(null);
   const [groceryList, setGroceryList] = useState([
     {
       _id: 1,
@@ -47,6 +48,7 @@ function App() {
     const currentItem = item;
     setInputField(currentItem.name);
     setCurrentEditing(currentItem._id);
+    input.current.focus();
   };
 
   const handleSetEdit = () => {
@@ -61,6 +63,7 @@ function App() {
 
   return (
     <ToBuyForm
+      input={input}
       isEditing={currentEditing}
       value={inputField}
       items={groceryList}
