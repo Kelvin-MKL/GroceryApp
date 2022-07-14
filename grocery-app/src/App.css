@@ -51,6 +51,7 @@ html{
 
 }
 .item-list{
+  
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
@@ -62,15 +63,26 @@ html{
   display: flex;
   font-weight: bold;
 
+
   
+}
+
+.item-list-container{
+
+  max-width: 300px;
+  word-break: keep-all;
+  word-wrap: break-word;
+
 }
 .item-list:hover{
   background-image: linear-gradient(to right, rgb(226, 229, 241), rgb(230, 99, 143));
-
+  transition: background-size 400ms, color .3s ease-in-out;
+  font-size: 110% ;
 }
 
 .item-edit{
-   margin-top: 10px;
+
+  margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
   background-image: linear-gradient(to bottom, rgb(121, 39, 87), rgb(63, 54, 28));
@@ -81,11 +93,12 @@ html{
   display: flex;
   color: rgb(224, 199, 199);
   font-weight: bold;
-
+  
 
 }
 
 .item-row{
+  
   justify-content: right;
 
 
@@ -104,4 +117,30 @@ html{
   cursor: pointer;
   background-color: cornflowerblue;
   color: azure;
+}
+
+h1 {
+  background:
+    linear-gradient(
+      to right,
+      rgb(124, 1, 87),
+      rgb(148, 32, 123)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+  );
+  background-size: 100% 3px, 0% 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms, color .3s ease-in-out;
+
+
+}
+
+h1:hover {
+  background-size: 0 3px, 100% 3px;
+  color: white;
 }

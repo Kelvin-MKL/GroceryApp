@@ -44,7 +44,7 @@ const ToBuyForm = ({
           key={item._id}
           className={isEditing === item._id ? "item-edit" : "item-list"}
         >
-          {item.name}
+          <div className='item-list-container'>{item.name}</div>
           <div className='list-row'>
             <GrEdit
               onClick={() => onEdit(item)}
