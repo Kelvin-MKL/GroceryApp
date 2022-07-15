@@ -3,9 +3,9 @@ import ToBuyForm from "./component/toBuyForm";
 import "./App.css";
 
 function App() {
-  const [currentEditing, setCurrentEditing] = useState(NaN);
-
   const input = useRef(null);
+  const [currentEditing, setCurrentEditing] = useState(NaN);
+  const [matchedGL, setMatchedGL] = useState([]);
   const [groceryList, setGroceryList] = useState([
     {
       _id: 1,
@@ -26,6 +26,8 @@ function App() {
   ]);
 
   const myDebounce = (cb, d) => {
+    // cb simply means callback, d means delay.
+    // It allows us to trigger a function at a specific time.
     let timer;
     return function (...args) {
       if (timer) clearTimeout(timer);
@@ -36,10 +38,16 @@ function App() {
   };
 
   const handleChange = myDebounce((e) => {
-    console.log(e.target.value);
+    const newMatchedResult = [];
+    const { value } = e.target;
+    if (value !== "")
+      groceryList.filter((item) =>
+        item.name.includes(value) ? newMatchedResult.push(item) : ""
+      );
+    setMatchedGL(newMatchedResult);
+    console.log(newMatchedResult);
+    //console.log(e.target.value);
   }, 1000);
-  // Whenever the input field value is changed, this func will be called.
-  // It will then update the virtual dom in the life cycle hook.
 
   const handleAdd = () => {
     // Always clone the current array, and modify it.
@@ -91,6 +99,7 @@ function App() {
       onDelete={handleDelete}
       onEdit={handleEdit}
       onUpdate={handleSetEdit}
+      matchedGL={matchedGL}
     />
   );
 }

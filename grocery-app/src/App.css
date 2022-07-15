@@ -28,18 +28,20 @@ html{
   background-image: linear-gradient(darkblue, rgb(109, 76, 122));
   display: flex;
   justify-content: center;
-  
+
 
 }
 .App-header{
   color: rgb(172, 137, 72);
   display: flex;
   justify-content: center;
+  font-family: Comic Sans MS;
 }
 .App-body-search{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  font-family: Comic Sans MS;
 
 }
 .App-body-list{
@@ -48,7 +50,7 @@ html{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  font-family: Comic Sans MS;
 }
 .item-list{
   
@@ -61,8 +63,8 @@ html{
   align-items: center;
   justify-content: space-between;
   display: flex;
-  font-weight: bold;
-
+  
+  font-family: Comic Sans MS;
 
   
 }
@@ -93,7 +95,25 @@ html{
   display: flex;
   color: rgb(224, 199, 199);
   font-weight: bold;
-  
+  font-family: Comic Sans MS;
+
+}
+
+
+.item-matched{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-image: linear-gradient(to bottom, rgb(141, 221, 94), rgb(212, 188, 114));
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  color: rgb(224, 199, 199);
+  font-weight: bold;
+  font-family: Comic Sans MS;
 
 }
 
@@ -108,7 +128,7 @@ html{
   border-radius: 10px;
   background-color: transparent;
   color: rgb(255, 255, 255);
-  
+  font-family: Comic Sans MS;
 }
 .btn-add{
   border-radius: 10px;
@@ -117,6 +137,7 @@ html{
   cursor: pointer;
   background-color: cornflowerblue;
   color: azure;
+  font-family: Comic Sans MS;
 }
 
 h1 {

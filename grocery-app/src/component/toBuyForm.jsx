@@ -12,6 +12,7 @@ const ToBuyForm = ({
   isEditing,
   onUpdate,
   input,
+  matchedGL,
 }) => {
   return (
     <div className='App'>
@@ -42,7 +43,14 @@ const ToBuyForm = ({
       {items.map((item) => (
         <div
           key={item._id}
-          className={isEditing === item._id ? "item-edit" : "item-list"}
+          className={
+            isEditing === item._id
+              ? "item-edit"
+              : matchedGL.filter((m) => m._id === item._id && m.name).length !==
+                0
+              ? "item-matched"
+              : "item-list"
+          }
         >
           <div className='item-list-container'>{item.name}</div>
           <div className='list-row'>
@@ -50,10 +58,14 @@ const ToBuyForm = ({
               onClick={() => onEdit(item)}
               style={{ cursor: "pointer" }}
             />
-            <RiDeleteBin2Line
-              onClick={() => onDelete(item)}
-              style={{ cursor: "pointer" }}
-            />
+            {isEditing === item._id ? (
+              " "
+            ) : (
+              <RiDeleteBin2Line
+                onClick={() => onDelete(item)}
+                style={{ cursor: "pointer" }}
+              />
+            )}
           </div>
         </div>
       ))}
