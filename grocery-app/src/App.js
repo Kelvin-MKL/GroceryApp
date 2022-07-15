@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const [currentEditing, setCurrentEditing] = useState(NaN);
-  const [inputField, setInputField] = useState("");
+
   const input = useRef(null);
   const [groceryList, setGroceryList] = useState([
     {
@@ -25,18 +25,28 @@ function App() {
     },
   ]);
 
-  const handleChange = (e) => {
-    // Whenever the input field value is changed, this func will be called.
-    // It will then update the virtual dom in the life cycle hook.
-    setInputField(e.target.value);
+  const myDebounce = (cb, d) => {
+    let timer;
+    return function (...args) {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        cb(...args);
+      }, d);
+    };
   };
+
+  const handleChange = myDebounce((e) => {
+    console.log(e.target.value);
+  }, 1000);
+  // Whenever the input field value is changed, this func will be called.
+  // It will then update the virtual dom in the life cycle hook.
 
   const handleAdd = () => {
     // Always clone the current array, and modify it.
     // Then replace the previous one.
     const items = [...groceryList];
     const newId = Math.floor(Math.random() * Date.now());
-    const newName = inputField;
+    const newName = input.current.value;
     const newItem = { _id: newId, name: newName };
     items.push(newItem);
     setGroceryList(items);
@@ -53,7 +63,7 @@ function App() {
     // Set input field as in focus
     // Set current editing item equals item.id
     const currentItem = item;
-    setInputField(currentItem.name);
+    input.current.value = item.name;
     setCurrentEditing(currentItem._id);
     input.current.focus();
   };
@@ -66,9 +76,8 @@ function App() {
     const item = items.filter((i) => i._id === currentEditing)[0];
     const index = items.indexOf(item);
     items[index] = { ...items[index] };
-    items[index].name = inputField;
+    items[index].name = input.current.value;
     setGroceryList(items);
-    setInputField("");
     setCurrentEditing(NaN);
   };
 
@@ -76,7 +85,6 @@ function App() {
     <ToBuyForm
       input={input}
       isEditing={currentEditing}
-      value={inputField}
       items={groceryList}
       onClick={handleAdd}
       onChange={handleChange}
