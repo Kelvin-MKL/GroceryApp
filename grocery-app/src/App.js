@@ -41,7 +41,6 @@ function App() {
     const newMatchedResult = [];
     const { value } = e.target;
     const filteredValue = value.toLowerCase();
-    console.log(filteredValue);
     if (filteredValue !== "")
       groceryList.filter((item) =>
         item.name.includes(filteredValue) ? newMatchedResult.push(item) : ""
