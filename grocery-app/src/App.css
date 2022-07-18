@@ -44,6 +44,7 @@ html{
   font-family: Comic Sans MS;
 
 }
+
 .App-body-list{
   border: dashed;
   display: flex;
@@ -68,14 +69,21 @@ html{
 
   
 }
-
+.item {
+  text-shadow: 2px 2px 10px #000000;
+  color: white;
+  
+}
+.item::first-letter{
+  text-transform: uppercase;
+}
 .item-list-container{
-
   max-width: 300px;
   word-break: keep-all;
   word-wrap: break-word;
-
 }
+
+
 .item-list:hover{
   background-image: linear-gradient(to right, rgb(226, 229, 241), rgb(230, 99, 143));
   transition: background-size 400ms, color .3s ease-in-out;
@@ -124,12 +132,14 @@ html{
 
 }
 .input-field{
+  text-transform: capitalize;
   margin-top: 5px;
   border-radius: 10px;
   background-color: transparent;
   color: rgb(255, 255, 255);
   font-family: Comic Sans MS;
 }
+
 .btn-add{
   border-radius: 10px;
   margin-left: 5px;

@@ -52,7 +52,7 @@ const ToBuyForm = ({
               : "item-list"
           }
         >
-          <div className='item-list-container'>{item.name}</div>
+          <div className='item item-list-container'>{item.name}</div>
           <div className='list-row'>
             <GrEdit
               onClick={() => onEdit(item)}

@@ -9,11 +9,11 @@ function App() {
   const [groceryList, setGroceryList] = useState([
     {
       _id: 1,
-      name: "Egg",
+      name: "egg",
     },
     {
       _id: 2,
-      name: "Milk",
+      name: "milk",
     },
     {
       _id: 3,
@@ -40,13 +40,13 @@ function App() {
   const handleChange = myDebounce((e) => {
     const newMatchedResult = [];
     const { value } = e.target;
-    if (value !== "")
+    const filteredValue = value.toLowerCase();
+    console.log(filteredValue);
+    if (filteredValue !== "")
       groceryList.filter((item) =>
-        item.name.includes(value) ? newMatchedResult.push(item) : ""
+        item.name.includes(filteredValue) ? newMatchedResult.push(item) : ""
       );
     setMatchedGL(newMatchedResult);
-    console.log(newMatchedResult);
-    //console.log(e.target.value);
   }, 1000);
 
   const handleAdd = () => {
@@ -54,10 +54,11 @@ function App() {
     // Then replace the previous one.
     const items = [...groceryList];
     const newId = Math.floor(Math.random() * Date.now());
-    const newName = input.current.value;
+    const newName = input.current.value.toLowerCase();
     const newItem = { _id: newId, name: newName };
     items.push(newItem);
     setGroceryList(items);
+    console.log(newItem);
   };
 
   const handleDelete = (item) => {
@@ -84,9 +85,10 @@ function App() {
     const item = items.filter((i) => i._id === currentEditing)[0];
     const index = items.indexOf(item);
     items[index] = { ...items[index] };
-    items[index].name = input.current.value;
+    items[index].name = input.current.value.toLowerCase();
     setGroceryList(items);
     setCurrentEditing(NaN);
+    input.current.value = "";
   };
 
   return (
