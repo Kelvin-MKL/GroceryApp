@@ -113,7 +113,6 @@ html{
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
-  background-image: linear-gradient(to bottom, rgb(141, 221, 94), rgb(212, 188, 114));
   border-radius: 20px;
   border: none;
   align-items: center;
@@ -122,6 +121,26 @@ html{
   color: rgb(224, 199, 199);
   font-weight: bold;
   font-family: Comic Sans MS;
+  animation: changeColor 3s ease-in-out infinite ;
+  transition: background-color .8 ease;
+  
+}
+
+@keyframes changeColor {
+  0% {
+    background-color: rgb(228, 143, 46);
+    
+
+  }
+  25%, 75%{
+    background-color: rgb(153, 197, 33);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  50% {
+    background-color:rgb(44, 132, 148);
+    
+  }
 
 }
 
