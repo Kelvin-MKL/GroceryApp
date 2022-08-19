@@ -41,7 +41,7 @@ function App() {
     const newMatchedResult = [];
     const { value } = e.target;
     const filteredValue = value.toLowerCase();
-    if (filteredValue !== "")
+    if (filteredValue !== "" && isNaN(currentEditing))
       groceryList.filter((item) =>
         item.name.includes(filteredValue) ? newMatchedResult.push(item) : ""
       );
@@ -58,6 +58,7 @@ function App() {
     items.push(newItem);
     setGroceryList(items);
     console.log(newItem);
+    input.current.value = "";
   };
 
   const handleDelete = (item) => {
