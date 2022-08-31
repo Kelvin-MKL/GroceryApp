@@ -9,7 +9,7 @@ function App() {
   const [groceryList, setGroceryList] = useState([
     {
       _id: 1,
-      name: "egg",
+      name: "eggs",
     },
     {
       _id: 2,
@@ -17,11 +17,11 @@ function App() {
     },
     {
       _id: 3,
-      name: "chips",
+      name: "apples",
     },
     {
       _id: 4,
-      name: "apples",
+      name: "chicken",
     },
   ]);
 
